@@ -1,0 +1,46 @@
+name: kisswaar_world_project
+description: A futuristic AI-powered, dropshipping-ready ecommerce platform for 2025++
+
+publish_to: 'none' # This is a private repo
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  firebase_core: ^2.27.0
+  firebase_auth: ^4.17.0
+  cloud_firestore: ^4.15.0
+  firebase_storage: ^11.5.0
+  firebase_messaging: ^14.7.3
+  provider: ^6.1.2
+  http: ^1.2.1
+  image_picker: ^1.0.7
+  intl: ^0.18.1
+  url_launcher: ^6.2.6
+  share_plus: ^7.2.1
+  fluttertoast: ^8.2.4
+  flutter_local_notifications: ^17.0.1
+  animations: ^2.0.11
+  pwa_install: ^0.2.0
+  path_provider: ^2.1.2
+  universal_html: ^2.2.4
+  webview_flutter_web: ^0.2.2
+  google_fonts: ^6.1.0
+  firebase_analytics: ^10.8.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
