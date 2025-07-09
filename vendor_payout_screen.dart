@@ -29,13 +29,7 @@ class VendorPayoutScreen extends StatelessWidget {
             subtitle: Text('Status: ${payout.status}'),
           );
         },
-      ),
-    );
-  }
-}
-// 📛 Profile Name: vendor_payout_screen.dart
-// ✅ Copy this profile name in GitHub file creation form
-
+  
 import 'package:flutter/material.dart';
 
 class VendorPayoutScreen extends StatelessWidget {
