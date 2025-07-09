@@ -1,0 +1,34 @@
+# 📛 Profile Name: flutter_firebase.yml
+# ✅ Copy this profile name in GitHub file creation form
+
+name: Flutter Web Deploy to Firebase
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.19.0"
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build web app
+        run: flutter build web
+
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@v2.2.0
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
