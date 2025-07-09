@@ -1,0 +1,7 @@
+String getBuyerTier(int orderCount, int referrals, double avgReview) {
+  if (orderCount >= 40 && referrals >= 10 && avgReview >= 4.7) return '🏆 Platinum';
+  if (orderCount >= 25 && avgReview >= 4.5) return '🥇 Gold';
+  if (orderCount >= 15) return '🥈 Silver';
+  if (orderCount >= 5) return '🥉 Bronze';
+  return '🔰 New Shopper';
+}
