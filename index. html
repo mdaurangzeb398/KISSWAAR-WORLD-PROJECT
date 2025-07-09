@@ -1,0 +1,16 @@
+<!-- 📛 Profile Name: index.html -->
+<!-- ✅ Copy this profile name in GitHub file creation form -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Kisswaar Dropshipping WebApp" />
+    <meta name="theme-color" content="#34c759" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Kisswaar</title>
+  </head>
+  <body>
+    <script src="main.dart.js" type="application/javascript"></script>
+  </body>
+</html>
