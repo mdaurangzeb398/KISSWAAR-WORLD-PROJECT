@@ -1,0 +1,61 @@
+// 📛 Profile Name: invoice_screen.dart
+// ✅ Copy this profile name in GitHub file creation form
+
+import 'package:flutter/material.dart';
+
+class InvoiceScreen extends StatelessWidget {
+  const InvoiceScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final order = {
+      'id': '#KWS5678',
+      'date': '10 July 2025',
+      'items': [
+        {'name': 'Kisswaar Hoodie XL', 'price': 799, 'qty': 1},
+        {'name': 'Neon Socks Pack', 'price': 199, 'qty': 2},
+      ],
+      'total': 1197,
+      'customer': {'name': 'Md Bhai', 'email': 'md@kisswaar.com'},
+    };
+
+    return Scaffold(
+      appBar: AppBar(title: const Text('🧾 Invoice')),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Invoice: ${order['id']}', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            Text('Date: ${order['date']}'),
+            const SizedBox(height: 12),
+            Text('Customer: ${order['customer']['name']}'),
+            Text('Email: ${order['customer']['email']}'),
+            const Divider(height: 30),
+            ...List.generate((order['items'] as List).length, (index) {
+              final item = order['items'][index];
+              return ListTile(
+                title: Text(item['name']),
+                subtitle: Text('₹${item['price']} x ${item['qty']}'),
+                trailing: Text('₹${item['price'] * item['qty']}'),
+              );
+            }),
+            const Divider(),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Text('Total: ₹${order['total']}', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton.icon(
+              icon: const Icon(Icons.download),
+              label: const Text('Download PDF'),
+              onPressed: () {
+                // TODO: Implement PDF generation logic
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
