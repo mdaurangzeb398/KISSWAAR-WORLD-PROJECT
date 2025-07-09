@@ -26,3 +26,9 @@ class KisswaarApp extends StatelessWidget {
     );
   }
 }
+void main() {
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: FeatureShowcaseScreen(), // 🔥 Module testing yahi se start hota hai
+  ));
+}
