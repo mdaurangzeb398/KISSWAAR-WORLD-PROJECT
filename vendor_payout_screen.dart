@@ -33,3 +33,41 @@ class VendorPayoutScreen extends StatelessWidget {
     );
   }
 }
+// 📛 Profile Name: vendor_payout_screen.dart
+// ✅ Copy this profile name in GitHub file creation form
+
+import 'package:flutter/material.dart';
+
+class VendorPayoutScreen extends StatelessWidget {
+  const VendorPayoutScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final payouts = [
+      {'date': '2025-07-01', 'amount': 4200, 'method': 'Bank Transfer', 'status': 'Paid'},
+      {'date': '2025-06-15', 'amount': 3100, 'method': 'UPI', 'status': 'Paid'},
+      {'date': '2025-06-01', 'amount': 2500, 'method': 'Wallet', 'status': 'Pending'},
+    ];
+
+    return Scaffold(
+      appBar: AppBar(title: const Text('💸 Payout History')),
+      body: ListView.builder(
+        itemCount: payouts.length,
+        itemBuilder: (_, index) {
+          final payout = payouts[index];
+          return Card(
+            child: ListTile(
+              leading: const Icon(Icons.payment),
+              title: Text('₹${payout['amount']} • ${payout['method']}'),
+              subtitle: Text('Date: ${payout['date']}'),
+              trailing: Chip(
+                label: Text(payout['status']),
+                backgroundColor: payout['status'] == 'Paid' ? Colors.green : Colors.orange,
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
