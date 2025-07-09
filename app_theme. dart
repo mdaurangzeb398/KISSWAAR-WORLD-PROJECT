@@ -1,0 +1,29 @@
+// 📛 Profile Name: app_theme.dart
+// ✅ Copy this profile name in GitHub file creation form
+
+import 'package:flutter/material.dart';
+
+class AppTheme {
+  static ThemeData lightTheme = ThemeData(
+    primarySwatch: Colors.green,
+    scaffoldBackgroundColor: Colors.white,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.green,
+      foregroundColor: Colors.white,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+    ),
+  );
+
+  static ThemeData darkTheme = ThemeData.dark().copyWith(
+    scaffoldBackgroundColor: Colors.black,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.black,
+      foregroundColor: Colors.white,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
+    ),
+  );
+} 
