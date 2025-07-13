@@ -1,46 +1,33 @@
-name: kisswaar_world_project
-description: A futuristic AI-powered, dropshipping-ready ecommerce platform for 2025++
+// 📁 KISSWAAR-WORLD-PROJECT // ✅ Flutter Web App Starter Template (For Firebase Hosting)
 
-publish_to: 'none' # This is a private repo
+// ========================== // 📄 pubspec.yaml // ========================== name: kisswaar_world_project description: A futuristic AI-powered, dropshipping-ready ecommerce platform for 2025++ version: 1.0.0+1 environment: sdk: ">=3.0.0 <4.0.0" dependencies: flutter: sdk: flutter cupertino_icons: ^1.0.6 firebase_core: ^2.27.0 firebase_auth: ^4.17.0 cloud_firestore: ^4.15.0 firebase_storage: ^11.5.0 firebase_messaging: ^14.7.3 http: ^1.2.1 image_picker: ^1.0.7 url_launcher: ^6.2.6 share_plus: ^7.2.1 fluttertoast: ^8.2.4 animations: ^2.0.11 pwa_install: ^0.2.0 google_fonts: ^6.1.0 firebase_analytics: ^10.8.0 dev_dependencies: flutter_test: sdk: flutter flutter_lints: ^3.0.1 flutter: uses-material-design: true assets: - assets/images/ - assets/icons/
 
-version: 1.0.0+1
+// ========================== // 📄 lib/main.dart // ========================== import 'package:flutter/material.dart'; import 'package:firebase_core/firebase_core.dart'; import 'firebase_options.dart';
 
-environment:
-  sdk: '>=3.0.0 <4.0.0'
+void main() async { WidgetsFlutterBinding.ensureInitialized(); await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform); runApp(const KisswaarApp()); }
 
-dependencies:
-  flutter:
-    sdk: flutter
-  cupertino_icons: ^1.0.6
-  firebase_core: ^2.27.0
-  firebase_auth: ^4.17.0
-  cloud_firestore: ^4.15.0
-  firebase_storage: ^11.5.0
-  firebase_messaging: ^14.7.3
-  provider: ^6.1.2
-  http: ^1.2.1
-  image_picker: ^1.0.7
-  intl: ^0.18.1
-  url_launcher: ^6.2.6
-  share_plus: ^7.2.1
-  fluttertoast: ^8.2.4
-  flutter_local_notifications: ^17.0.1
-  animations: ^2.0.11
-  pwa_install: ^0.2.0
-  path_provider: ^2.1.2
-  universal_html: ^2.2.4
-  webview_flutter_web: ^0.2.2
-  google_fonts: ^6.1.0
-  firebase_analytics: ^10.8.0
+class KisswaarApp extends StatelessWidget { const KisswaarApp({super.key});
 
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^3.0.1
+@override Widget build(BuildContext context) { return MaterialApp( debugShowCheckedModeBanner: false, title: 'Kisswaar 💘', theme: ThemeData( useMaterial3: true, colorSchemeSeed: Colors.pink, fontFamily: 'Roboto', ), home: const HomePage(), ); } }
 
-flutter:
-  uses-material-design: true
+class HomePage extends StatelessWidget { const HomePage({super.key});
 
-  assets:
-    - assets/images/
-    - assets/icons/
+@override Widget build(BuildContext context) { return Scaffold( appBar: AppBar(title: const Text('Kisswaar 💘 - AI Store')), body: const Center( child: Text( 'Welcome to Kisswaar - The AI Future of E-Commerce!', style: TextStyle(fontSize: 20), ), ), ); } }
+
+// ========================== // 📄 web/index.html // ==========================
+
+<!DOCTYPE html><html>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="Kisswaar - AI powered ecommerce">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisswaar 💘</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e91e63">
+  </head>
+  <body>
+    <script src="flutter.js" defer></script>
+    <script>
+      window.addEventListener('load', function () {
+        _
