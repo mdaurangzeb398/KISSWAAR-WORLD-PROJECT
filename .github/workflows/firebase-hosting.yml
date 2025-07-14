@@ -24,7 +24,7 @@ jobs:
       - name: Setup Flutter SDK
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.6'  # Ya jo version aap use kar rahe ho
+          flutter-version: '3.19.6'
 
       - name: Install dependencies
         run: flutter pub get
